@@ -6,16 +6,17 @@ interface PropsCard {
   Title: string
   Price: number
   ButtonContent: string
-  onClick: (id:number,Image: string, Title: string, Price: number) => void
+  Quantity: number
+  onClick: (id:number,Image: string, Title: string, Price: number , Quantity:number) => void
 }
 
 
 
-const Card: React.FC<PropsCard> = ({id , Image, Title, Price, ButtonContent , onClick }) => {
+const Card: React.FC<PropsCard> = ({id , Image, Title, Price, Quantity ,  ButtonContent  , onClick }) => {
 
 
   const handleClick = () => {
-    onClick(id, Image, Title, Price);
+    onClick(id, Image, Title, Price,Quantity);
   }
 
   return (

@@ -37,12 +37,13 @@ const Products = () => {
   }, [])
 
 
-  const handleCardClick = (id:number ,Image:string, Title:string, Price:number) => {
+  const handleCardClick = (id:number ,Image:string, Title:string, Price:number  ,Quantity:number) => {
     const ObjectSingleProduct = {
       id: id,
       Image: Image,
       Title: Title,
-      Price: Price
+      Price: Price,
+      Quantity: 1
     }
     dispatch(addProduct(ObjectSingleProduct))
   };
@@ -60,6 +61,7 @@ const Products = () => {
             Image={singleProduct["images"][0]}
             Title={singleProduct["title"]}
             Price={singleProduct["price"]}
+            Quantity={singleProduct["Quantity"]}
             ButtonContent="Buy Now"
             onClick={handleCardClick}
           />

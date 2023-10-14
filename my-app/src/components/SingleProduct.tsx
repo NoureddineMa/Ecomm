@@ -11,7 +11,7 @@ interface PropsProduct {
   Image: string
   Title: string
   Price : string
-  onClick?: (id:number) => void
+  onClick?: (id:number) => number
 }
 
 
@@ -27,7 +27,7 @@ const SingleProduct:React.FC<PropsProduct> = ({ id , Image , Title , Price , onC
     if (product) {
       dispatch(incrementQuantity(product.id));
     }
-  };
+  }
 
   const handleDecrement = () => {
     if (product) {
